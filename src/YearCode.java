@@ -1,21 +1,21 @@
 import java.util.Scanner;
 
-public class Test3 {
+public class YearCode {
     int m1() {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("enter the year");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter birth year...just like 1999");
         int year = sc.nextInt();
-        int digit= year%10;
-        year=year/10;
-        int a=year;
+        int digit = year % 10;
+        year = year / 10;
+        int a = year;
 
-        int digit1= year%10;
-        year=year/10;
-        int a1=year;
+        int digit1 = year % 10;
+        year = year / 10;
+        int a1 = year;
 //        System.out.println(year);
 
         int yearCode = 0;
-        if (year%4==0) {
+        if (year % 4 == 0) {
             yearCode = 6;
             System.out.println(yearCode);
         }
@@ -24,7 +24,7 @@ public class Test3 {
 //        }
         //-------------------------------------------------------------------------
         int yearCode1 = 0;
-        if ((year-1)%4==0) {
+        if ((year - 1) % 4 == 0) {
             yearCode1 = 4;
             System.out.println(yearCode1);
         }
@@ -35,7 +35,7 @@ public class Test3 {
 
         //----------------------------------------------------------------------
         int yearCode2 = 0;
-        if ((year+3)%4==1) {
+        if ((year + 3) % 4 == 1) {
             yearCode2 = 2;
             System.out.println(yearCode2);
         }
@@ -45,7 +45,7 @@ public class Test3 {
 
         //------------------------------------------------------------
         int yearCode3 = 0;
-        if (((year+3)-1)%4==1) {
+        if (((year + 3) - 1) % 4 == 1) {
             yearCode3 = 0;
             System.out.println(yearCode3);
         }
@@ -55,9 +55,10 @@ public class Test3 {
         return year;
 
     }
+
     public static void main(String[] args) {
-        Test3 test3 =new Test3();
-        test3.m1();
+        YearCode yearCode = new YearCode();
+        yearCode.m1();
 
 
     }

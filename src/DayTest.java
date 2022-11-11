@@ -1,7 +1,6 @@
-import java.util.Objects;
 import java.util.Scanner;
 
-public class Day {
+public class DayTest {
 
 
     public static void main(String[] args) {
