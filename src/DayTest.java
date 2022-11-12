@@ -8,14 +8,20 @@ public class DayTest {
         //**************************************************************************************************************
         //    Birth date
         //**************************************************************************************************************
-        System.out.println("Enter the birthday date");
+        System.out.println("Note:");
+        System.out.println("You have to enter only one digit of your birth date, if in your birth date contain one digit... ");
+        System.out.println("You have to enter only one digit of your birth month, if in your birth month contain one digit... ");
+        System.out.println("You have to enter all digits of your birth year... ");
+        System.out.println("If your birthday on 01 Jan 1999 or 14 Oct 1999... ");
+        System.out.println("Then simply enter 1-1-1999 or 14-10-1999... ");
+        System.out.println();
+        //*************************************************************************************************************
+        System.out.println("Enter your birth date...");
         int bdyDate = scanner.nextInt();
-
-
         //**************************************************************************************************************
         //    Month code
         //**************************************************************************************************************
-        System.out.println("Enter the month in number...just like 1,2");
+        System.out.println("Enter your birth month in number...");
         int month = scanner.nextInt();
         if (month == 1) {
             month = 0;
@@ -42,11 +48,10 @@ public class DayTest {
         } else if (month == 12) {
             month = 5;
         }
-
         //**************************************************************************************************************
         //    year
         //**************************************************************************************************************
-        System.out.println("Enter birth year...just like 1999");
+        System.out.println("Enter your birth year...");
         int year = scanner.nextInt();
         int Ly = 0;
         int digit = year % 10;
@@ -85,19 +90,19 @@ public class DayTest {
         int dayofbdy = (bdyDate + month + Ly + LPY + yearCode) % 7;
 
         if (dayofbdy == 0) {
-            System.out.println("Day of the date " + bdyDate + "-" + month + "-" + year + digit1 + digit + " is " + "Sunday");
+            System.out.println("You were born on Sunday");
         } else if (dayofbdy == 1) {
-            System.out.println("Day of the date " + bdyDate + "-" + month + "-" + year + digit1 + digit + " is " + "Monday");
+            System.out.println("You were born on Monday");
         } else if (dayofbdy == 2) {
-            System.out.println("Day of the date " + bdyDate + "-" + month + "-" + year + digit1 + digit + " is " + "Tuesday");
+            System.out.println("You were born on Tuesday");
         } else if (dayofbdy == 3) {
-            System.out.println("Day of the date " + bdyDate + "-" + month + "-" + year + digit1 + digit + " is " + "Wednesday");
+            System.out.println("You were born on Wednesday");
         } else if (dayofbdy == 4) {
-            System.out.println("Day of the date " + bdyDate + "-" + month + "-" + year + digit1 + digit + " is " + "Thursday");
+            System.out.println("You were born on Thursday");
         } else if (dayofbdy == 5) {
-            System.out.println("Day of the date " + bdyDate + "-" + month + "-" + year + digit1 + digit + " is " + "Friday");
+            System.out.println("You were born on Friday");
         } else if (dayofbdy == 6) {
-            System.out.println("Day of the date " + bdyDate + "-" + month + "-" + year + digit1 + digit + " is " + "Saturday");
+            System.out.println("You were born on Saturday");
         }
     }
 }
