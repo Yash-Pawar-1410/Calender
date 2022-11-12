@@ -1,7 +1,9 @@
+package BluePrintOfCalender;
+
 import java.util.Scanner;
 
-public class Year {
-    void m2() {
+public class TotalLeapYear {
+    void m3() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter birth year...just like 1999");
         int year = sc.nextInt();
@@ -13,13 +15,13 @@ public class Year {
         year = year / 10;
 
         Ly = Integer.parseInt((digit1 + "" + digit));
-//        int LPY=Ly/4;
-        System.out.println(Ly);
+        int LPY = Ly / 4;
+        System.out.println(LPY);
     }
 
     public static void main(String[] args) {
-        Year year = new Year();
-        year.m2();
+        TotalLeapYear totalLeapYear = new TotalLeapYear();
+        totalLeapYear.m3();
 
 
     }

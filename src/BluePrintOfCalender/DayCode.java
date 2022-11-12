@@ -1,3 +1,5 @@
+package BluePrintOfCalender;
+
 import java.util.Scanner;
 
 public class DayCode {
