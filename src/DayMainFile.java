@@ -107,10 +107,12 @@ public class DayMainFile {
             } else if (originalM == 2) {
                 month = 3;
             }
+            int dayofbdy = ((bdyDate + lastDigitOfYr + month + yearCode + totalLeapYr) % 7);
+        }
             //**********************************************************************************************************
             //     Main logic to get day
             //**********************************************************************************************************
-            int dayofbdy = ((bdyDate + lastDigitOfYr + month + yearCode + totalLeapYr) % 7);
+        int dayofbdy = ((bdyDate + lastDigitOfYr + month + yearCode + totalLeapYr) % 7);
             //**********************************************************************************************************
             //     Days code
             //**********************************************************************************************************
@@ -137,7 +139,7 @@ public class DayMainFile {
                     System.out.println("You were born on Saturday");
                     break;
             }
-        }
+
     }
 }
 
