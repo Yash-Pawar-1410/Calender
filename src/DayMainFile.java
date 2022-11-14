@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-public class DayTest1 {
-
-
+public class DayMainFile {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //**************************************************************************************************************
@@ -23,55 +21,60 @@ public class DayTest1 {
         //**************************************************************************************************************
         System.out.println("Enter your birth month in number...");
         int month = scanner.nextInt();
+        int originalM = month;
+        switch (month) {
+            case 1:
+                month = 1;
+                break;
+            case 2:
+                month = 4;
+                break;
+            case 3:
+                month = 4;
+                break;
+            case 4:
+                month = 0;
+                break;
+            case 5:
+                month = 2;
+                break;
+            case 6:
+                month = 5;
+                break;
+            case 7:
+                month = 0;
+                break;
+            case 8:
+                month = 3;
+                break;
+            case 9:
+                month = 6;
+                break;
+            case 10:
+                month = 1;
+                break;
+            case 11:
+                month = 4;
+                break;
+            case 12:
+                month = 6;
+                break;
+        }
+        //**************************************************************************************************************
+        //   Last two digit of the year
+        //**************************************************************************************************************
         System.out.println("Enter your birth year...");
         int year = scanner.nextInt();
-
-        if (year%4==0){
-            if (month==1){
-                month=0;
-            } else if (month==3) {
-                month=3;
-            }
-        }
-        if (month == 1) {
-            month = 1;
-        } else if (month == 2) {
-            month = 4;
-        } else if (month == 3) {
-            month = 4;
-        } else if (month == 4) {
-            month = 0;
-        } else if (month == 5) {
-            month = 2;
-        } else if (month == 6) {
-            month = 5;
-        } else if (month == 7) {
-            month = 0;
-        } else if (month == 8) {
-            month = 3;
-        } else if (month == 9) {
-            month = 6;
-        } else if (month == 10) {
-            month = 1;
-        } else if (month == 11) {
-            month = 4;
-        } else if (month == 12) {
-            month = 6;
-        }
-        //**************************************************************************************************************
-        //    year
-        //**************************************************************************************************************
-//        System.out.println("Enter your birth year...");
-//        int year = scanner.nextInt();
-        int Ly = 0;
+        int yr = year;
+        int lastDigitOfYr = 0;
         int digit = year % 10;
         year = year / 10;
 
         int digit1 = year % 10;
         year = year / 10;
-        Ly = Integer.parseInt((digit1 + "" + digit));
+        lastDigitOfYr = Integer.parseInt((digit1 + "" + digit));
         //**************************************************************************************************************
-        //    year code
+        //    Year code
         //**************************************************************************************************************
         int yearCode = 0;
         if (year % 4 == 0) {
@@ -93,28 +96,48 @@ public class DayTest1 {
             yearCode3 = 0;
         }
         //**************************************************************************************************************
-        //   leap yr code
+        //   Total leap year
         //**************************************************************************************************************
-        int LPY = Ly / 4;
+        int totalLeapYr = lastDigitOfYr / 4;
         //**************************************************************************************************************
-       int dayofbdy = (bdyDate + month + Ly + LPY + yearCode) % 7;
 
-        if (dayofbdy == 0) {
-            System.out.println("You were born on Sunday");
-        } else if (dayofbdy == 1) {
-            System.out.println("You were born on Monday");
-        } else if (dayofbdy == 2) {
-            System.out.println("You were born on Tuesday");
-        } else if (dayofbdy == 3) {
-            System.out.println("You were born on Wednesday");
-        } else if (dayofbdy == 4) {
-            System.out.println("You were born on Thursday");
-        } else if (dayofbdy == 5) {
-            System.out.println("You were born on Friday");
-        } else if (dayofbdy == 6) {
-            System.out.println("You were born on Saturday");
+        if (yr % 400 == 0 || (yr % 100 != 0 && yr % 4 == 0)) {
+            if (originalM == 1) {
+                month = 0;
+            } else if (originalM == 2) {
+                month = 3;
+            }
+            //**********************************************************************************************************
+            //     Main logic to get day
+            //**********************************************************************************************************
+            int dayofbdy = ((bdyDate + lastDigitOfYr + month + yearCode + totalLeapYr) % 7);
+            //**********************************************************************************************************
+            //     Days code
+            //**********************************************************************************************************
+            switch (dayofbdy) {
+                case 2:
+                    System.out.println("You were born on Monday");
+                    break;
+                case 1:
+                    System.out.println("You were born on Sunday");
+                    break;
+                case 3:
+                    System.out.println("You were born on Tuesday");
+                    break;
+                case 4:
+                    System.out.println("You were born on Wednesday");
+                    break;
+                case 5:
+                    System.out.println("You were born on Thursday");
+                    break;
+                case 6:
+                    System.out.println("You were born on Friday");
+                    break;
+                case 0:
+                    System.out.println("You were born on Saturday");
+                    break;
+            }
         }
-
     }
 }
 
